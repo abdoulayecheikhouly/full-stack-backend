@@ -22,7 +22,7 @@ public class Produit {
 
     private Long idProduit;
     private String nomProduit;
-    private Double  prix;
+    private Double  prixProduit;
     private Date dateCreation;
     @ManyToOne
     private Categorie categorie;
