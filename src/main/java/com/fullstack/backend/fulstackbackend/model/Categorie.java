@@ -1,5 +1,6 @@
 package com.fullstack.backend.fulstackbackend.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -17,6 +18,7 @@ public class Categorie {
     private Long idCat;
     private String nomCat;
     private String descriptionCat;
+    @JsonIgnore
     @OneToMany(mappedBy = "categorie")
     private List <Produit> produits;
 
