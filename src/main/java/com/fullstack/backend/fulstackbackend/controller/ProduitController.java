@@ -34,20 +34,22 @@ public class ProduitController {
     public Produit updateProduit(@RequestBody Produit produit) {
         return produitService.updateProduit(produit);
     }
-    /*@RequestMapping(value=" /del/{id}",method = RequestMethod.DELETE)
-    public void deleteProduit(@PathVariable("id") Long id)
-    {
-        produitService.deleteProduitById(id);
-    }*/
+
     @DeleteMapping("/{id}")
     public void deleteProduit(@PathVariable("id") Long id)
     {
+
         produitService.deleteProduitById(id);
     }
 
     @RequestMapping(value="/prodscat/{idCat}",method = RequestMethod.GET)
     public List<Produit> getProduitsByCatId(@PathVariable("idCat") Long idCat) {
         return produitService.findByCategorieIdCat(idCat);
+    }
+    @RequestMapping(value ="/prodsByName/{nom}",method = RequestMethod.GET)
+
+    public List <Produit> getProduitByNom(@PathVariable("nom") String nom){
+      return   produitService.findByNomProduit(nom);
     }
 
 
